@@ -1,0 +1,288 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #092635;
+}
+
+nav {
+  background-color: #9EC8B9;
+  padding: 10px 20px;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin-left: 20px;
+}
+
+.nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.restaurants {
+    padding: 2rem;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .restaurant-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 2rem;
+    justify-content: center; 
+  }
+  
+  .restaurant-item {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .restaurant-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .restaurant-info {
+    text-align: left;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr)); /* Menampilkan 3 kartu per baris */
+    gap: 24px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Pusatkan daftar restoran di tengah */
+  }
+  
+  .card {
+    background: #5C8374;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    margin: 0 auto; /* Pusatkan kartu di tengah */
+  }
+  
+  @media (max-width: 1200px) {
+    .wrapper {
+      grid-template-columns: repeat(2, minmax(200px, 1fr)); /* Ketika layar lebih kecil, tampilkan 2 kartu per baris */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .wrapper {
+      grid-template-columns: repeat(1, minmax(200px, 1fr)); /* Ketika layar sangat kecil, tampilkan 1 kartu per baris */
+    }
+  }
+  
+  .poster {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Pastikan gambar memenuhi ruang tanpa mengubah aspek rasio */
+    transition: transform 0.3s ease-in-out;
+  }  
+  
+  .poster .prev,
+  .poster .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .poster .prev {
+    left: 0;
+  }
+  
+  .poster .next {
+    right: 0;
+  }
+  
+  .poster .prev:hover,
+  .poster .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .card:hover .poster img {
+    transform: scale(1.1);
+  }
+  
+  .details {
+    padding: 1.5em;
+  }
+  
+  .details h1,
+  .details h2 {
+    font-weight: 700;
+  }
+  
+  .details h1 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+  }
+  
+  .details h2 {
+    font-weight: 400;
+    font-size: 1em;
+    margin-bottom: 10px;
+    opacity: .6;
+  }
+  
+  .details .rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .details .rating i {
+    color: #e3c414;
+    margin-right: 5px;
+  }
+  
+  .details .desc {
+    color: #fff;
+    opacity: .8;
+    line-height: 1.5;
+    margin-bottom: 1em;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Jumlah baris yang ditampilkan */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer; /* Ubah kursor saat teks dapat diklik */
+}
+
+.details .desc.full {
+    -webkit-line-clamp: unset; /* Batalkan pemotongan teks */
+    overflow: visible;
+    text-overflow: unset;
+}
+
+  
+  @media (max-width: 600px) {
+    .details h1 {
+      font-size: 1.2em;
+    }
+  
+    .details h2 {
+      font-size: 0.9em;
+    }
+  
+    .details .rating {
+      font-size: 0.9em;
+    }
+  }
+
+  footer {
+    background-color: #9EC8B9;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer .social-media a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer .social-media a:hover {
+    text-decoration: underline;
+}
+
+@keyframes slide {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-100%);}
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        background-color: #333;
+        transition: 0.3s;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 0;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    #gallery .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #gallery .text {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+}
